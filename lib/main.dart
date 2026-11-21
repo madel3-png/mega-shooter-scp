@@ -1258,15 +1258,16 @@ class _GamePainter extends CustomPainter {
 
     if (p1Hp > 0) {
       paint.color = isStealth ? Colors.blueGrey : Colors.cyanAccent;
-      canvas.drawRRect(RRect.fromCenter(center: p1, width: 38, height: 38, radius: const Radius.circular(8)), paint);
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromCenter(center: p1, width: 38, height: 38), const Radius.circular(8)), paint);
       _drawText(canvas, "P1", p1, Colors.black);
     }
 
     if (p2 != null && p2Hp > 0) {
       paint.color = Colors.orangeAccent;
-      canvas.drawRRect(RRect.fromCenter(center: p2!, width: 38, height: 38, radius: const Radius.circular(8)), paint);
+      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromCenter(center: p2!, width: 38, height: 38), const Radius.circular(8)), paint);
       _drawText(canvas, "P2", p2!, Colors.black);
     }
+
 
     if (!inPocket) {
       for (var e in enemies) {
